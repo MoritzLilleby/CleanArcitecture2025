@@ -15,7 +15,18 @@ namespace Persistence.EntityTypeConfigurations
         {
             builder.HasKey(x => x.Id);
 
-            builder.Property(p => p.Summary).IsRequired(false);
+            builder
+                .Property(p => p.Date)
+                .IsRequired();
+
+            builder
+             .Property(p => p.TemperatureC).HasMaxLength(50)
+             .IsRequired();
+
+            builder
+                .Property(p => p.Summary)
+                .IsRequired(false)
+                .HasMaxLength(150);
 
             builder.ToTable("WeatherForCast");
         }
