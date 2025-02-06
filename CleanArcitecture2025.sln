@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArcitecture2025.Server", "CleanArcitecture2025.Server\CleanArcitecture2025.Server.csproj", "{AF106DDC-B507-4F1B-B28F-EAE10773FD94}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{ADED1E8E-985C-4452-AFF2-5A7DCB991539}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Contracts", "Application.Contracts\Application.Contracts.csproj", "{3C1D31D8-6C99-4C0E-A0A5-2F78B61D8B89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService", "BackgroundService\BackgroundService.csproj", "{7569B9A6-68BF-4D39-9190-CECFF5ED22C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{3C1D31D8-6C99-4C0E-A0A5-2F78B61D8B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C1D31D8-6C99-4C0E-A0A5-2F78B61D8B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C1D31D8-6C99-4C0E-A0A5-2F78B61D8B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7569B9A6-68BF-4D39-9190-CECFF5ED22C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7569B9A6-68BF-4D39-9190-CECFF5ED22C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7569B9A6-68BF-4D39-9190-CECFF5ED22C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7569B9A6-68BF-4D39-9190-CECFF5ED22C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

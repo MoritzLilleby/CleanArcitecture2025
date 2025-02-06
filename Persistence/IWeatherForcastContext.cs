@@ -12,6 +12,8 @@ namespace Persistence
     {
         internal DbSet<WeatherForcastEntity> WeatherForcastEntities { get; }
 
+        internal Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+
     }
 
 }

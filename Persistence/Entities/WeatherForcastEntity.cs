@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Persistence.Behaviours;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,10 @@ namespace Persistence.Entities
         public int TemperatureC { get; set; }
 
         public string? Summary { get; set; }
+
+        public void Accept(IWeatherVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }
