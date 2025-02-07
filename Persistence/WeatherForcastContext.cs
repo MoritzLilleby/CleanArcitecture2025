@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Persistence
 {
-    internal class WeatherForcastContext : DbContext, IWeatherForcastContext
+    internal sealed class WeatherForcastContext : DbContext, IWeatherForcastContext
     {
         public WeatherForcastContext(DbContextOptions<WeatherForcastContext> options)
           : base(options) // Pass options to the base constructor
