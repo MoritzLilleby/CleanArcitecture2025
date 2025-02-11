@@ -1,19 +1,21 @@
 ﻿using Application.Contracts;
 using Microsoft.EntityFrameworkCore;
-using Persistence.Behaviours;
+using Persistence.Creational;
 using Persistence.Entities;
 
 namespace Persistence.Repositories
 {
-    public class WeatherForcastRepository(IWeatherForcastContext context)
+    public class WeatherForecastRepository(IWeatherForecastContext context)
     {
-        private readonly DbSet<WeatherForcastEntity> _table = context.WeatherForcastEntities;
+        private readonly DbSet<WeatherForecastEntity> _table = context.WeatherForcastEntities;
 
-        public async Task Create() 
+        public async Task Create()
         {
-            var forcast = new WeatherForcastEntity();
+            var forcast = new WeatherForecastEntity();
 
-            forcast.Accept(new Zeus());
+            var factory = new WeatherGodVisitorFactory();
+
+            forcast.Accept(factory.CreateWeatherGodVisitor());
 
             await _table.AddAsync(forcast);
 
@@ -22,7 +24,6 @@ namespace Persistence.Repositories
 
         public async Task<List<WeatherForecast>> GetAll()
         {
-
             return await _table.Select(s => new WeatherForecast()
             {
                 Summary = s.Summary,

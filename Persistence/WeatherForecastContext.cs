@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace Persistence
 {
-    internal sealed class WeatherForcastContext : DbContext, IWeatherForcastContext
+    internal sealed class WeatherForecastContext : DbContext, IWeatherForecastContext
     {
-        public WeatherForcastContext(DbContextOptions<WeatherForcastContext> options)
+        public WeatherForecastContext(DbContextOptions<WeatherForecastContext> options)
           : base(options) // Pass options to the base constructor
         {
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            new WeatherForcastTypeConfiguration().Configure(modelBuilder.Entity<WeatherForcastEntity>());
+            new WeatherForecastTypeConfiguration().Configure(modelBuilder.Entity<WeatherForecastEntity>());
         }
-        
-        public DbSet<WeatherForcastEntity> WeatherForcastEntities { get; set; }
+
+        public DbSet<WeatherForecastEntity> WeatherForcastEntities { get; set; }
 
     }
 }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Persistence.Behaviours
 {
-    internal class Zeus : IWeatherVisitor
+    internal class Zeus : IWeatherGodVisitor
     {
-        public void Visit(WeatherForcastEntity weatherForcast)
+        public void Visit(WeatherForecastEntity weatherForcast)
         {
             Console.WriteLine($"Zeus is visiting {weatherForcast.Summary} weather on {weatherForcast.Date}.");
 

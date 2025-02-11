@@ -22,9 +22,9 @@ namespace Persistence
             try
             {
 
-                var context = services.GetRequiredService<WeatherForcastContext>();
+                var context = services.GetRequiredService<WeatherForecastContext>();
 
-                var weatherForcastTable = context.Set<WeatherForcastEntity>();
+                var weatherForcastTable = context.Set<WeatherForecastEntity>();
 
                 // Look for any students.
                 if (weatherForcastTable.Any())
@@ -37,7 +37,7 @@ namespace Persistence
                     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
                 };
 
-                var forcasts = Enumerable.Range(1, 5).Select(index => new WeatherForcastEntity
+                var forcasts = Enumerable.Range(1, 5).Select(index => new WeatherForecastEntity
                 {
                     Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                     TemperatureC = Random.Shared.Next(-20, 55),

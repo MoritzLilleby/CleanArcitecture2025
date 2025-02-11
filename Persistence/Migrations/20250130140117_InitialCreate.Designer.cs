@@ -11,7 +11,7 @@ using Persistence;
 
 namespace Persistence.Migrations
 {
-    [DbContext(typeof(WeatherForcastContext))]
+    [DbContext(typeof(WeatherForecastContext))]
     [Migration("20250130140117_InitialCreate")]
     partial class InitialCreate
     {

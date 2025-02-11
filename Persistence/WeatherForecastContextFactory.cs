@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Persistence
 {
-    internal class WeatherForcastContextFactory : IDesignTimeDbContextFactory<WeatherForcastContext>
+    internal class WeatherForecastContextFactory : IDesignTimeDbContextFactory<WeatherForecastContext>
     {
-        public WeatherForcastContext CreateDbContext(string[] args)
+        public WeatherForecastContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<WeatherForcastContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<WeatherForecastContext>();
             var connectionString = "Server=localhost;Database=WeatherForcast;Trusted_Connection=True;MultipleActiveResultSets=true; Encrypt=false";
             optionsBuilder.UseSqlServer(connectionString);
 
-            return new WeatherForcastContext(optionsBuilder.Options);
+            return new WeatherForecastContext(optionsBuilder.Options);
 
         }
     }

@@ -10,7 +10,7 @@ using Persistence;
 
 namespace Persistence.Migrations
 {
-    [DbContext(typeof(WeatherForcastContext))]
+    [DbContext(typeof(WeatherForecastContext))]
     partial class WeatherForcastContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

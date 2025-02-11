@@ -6,7 +6,7 @@ namespace Infrastructure
 {
     public static class InfrastructureServiceExtensions
     {
-        public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration) 
+        public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddPersistence(configuration);
         }

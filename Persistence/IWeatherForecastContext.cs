@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Persistence
 {
-    public interface IWeatherForcastContext
+    public interface IWeatherForecastContext
     {
-        internal DbSet<WeatherForcastEntity> WeatherForcastEntities { get; }
+        internal DbSet<WeatherForecastEntity> WeatherForcastEntities { get; }
 
         internal Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 

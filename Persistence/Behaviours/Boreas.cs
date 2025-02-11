@@ -9,7 +9,7 @@ namespace Persistence.Behaviours
 {
     internal class Boreas : Anemoi
     {
-        public override void Visit(WeatherForcastEntity weatherForecast)
+        public override void Visit(WeatherForecastEntity weatherForecast)
         {
             Console.WriteLine($"Boreas is visiting {weatherForecast.Summary} weather on {weatherForecast.Date}.");
 

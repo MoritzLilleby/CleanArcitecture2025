@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Persistence.Behaviours
 {
-    internal interface IWeatherVisitor
+    internal interface IWeatherGodVisitor
     {
-        public void Visit(WeatherForcastEntity weatherForcast);
+        public void Visit(WeatherForecastEntity weatherForecast);
     }
 }

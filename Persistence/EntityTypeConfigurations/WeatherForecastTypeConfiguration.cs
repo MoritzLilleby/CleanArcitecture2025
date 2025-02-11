@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Persistence.EntityTypeConfigurations
 {
-    internal class WeatherForcastTypeConfiguration : IEntityTypeConfiguration<WeatherForcastEntity>
+    internal class WeatherForecastTypeConfiguration : IEntityTypeConfiguration<WeatherForecastEntity>
     {
-        public void Configure(EntityTypeBuilder<WeatherForcastEntity> builder)
+        public void Configure(EntityTypeBuilder<WeatherForecastEntity> builder)
         {
             builder.HasKey(x => x.Id);
 

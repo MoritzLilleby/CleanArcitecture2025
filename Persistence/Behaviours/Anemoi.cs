@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Persistence.Behaviours
 {
-    internal abstract class Anemoi : IWeatherVisitor
+    internal abstract class Anemoi : IWeatherGodVisitor, IAnemoi
     {
-        public abstract void Visit(WeatherForcastEntity weatherForecast);
+        public abstract void Visit(WeatherForecastEntity weatherForecast);
     }
 
 }

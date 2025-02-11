@@ -5,26 +5,32 @@ using Persistence.Repositories;
 namespace CleanArcitecture2025.Server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("weatherforecast")]
     public class WeatherForecastController : ControllerBase
     {
- 
+
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly WeatherForcastRepository _weatherForcastRepository;
+        private readonly WeatherForecastRepository _weatherForcastRepository;
 
         public WeatherForecastController(
             ILogger<WeatherForecastController> logger,
-            Persistence.Repositories.WeatherForcastRepository weatherForcastRepository
+            Persistence.Repositories.WeatherForecastRepository weatherForcastRepository
             )
         {
             _logger = logger;
             _weatherForcastRepository=weatherForcastRepository;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
         public async Task<List<WeatherForecast>> Get()
         {
             return await _weatherForcastRepository.GetAll();
+        }
+
+        [HttpPost]
+        public async Task Create()
+        {
+            await _weatherForcastRepository.Create();
         }
     }
 }
