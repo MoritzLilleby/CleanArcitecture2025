@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persistence.Behaviours
+namespace Persistence.Behaviours.Greek
 {
-    internal class Boreas : Anemoi
+    internal class Eurus : Anemoi
     {
         public override void Visit(WeatherForecastEntity weatherForecast)
         {
-            Console.WriteLine($"Boreas is visiting {weatherForecast.Summary} weather on {weatherForecast.Date}.");
+            Console.WriteLine($"Eurus is visiting {weatherForecast.Summary} weather on {weatherForecast.Date}.");
 
-            weatherForecast.Summary = "Cold Wind";
-            weatherForecast.TemperatureC -= 10;
+            weatherForecast.Summary = "Stormy Wind";
+            weatherForecast.TemperatureC -= 5;
             weatherForecast.Date = DateOnly.FromDateTime(DateTime.Now.AddDays(1));
         }
     }

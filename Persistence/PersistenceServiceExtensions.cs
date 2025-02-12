@@ -14,8 +14,11 @@ namespace Persistence
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
 
-            //services.AddScoped<IWeatherForcastContext, WeatherForcastContext>();
-            services.AddScoped<WeatherForecastRepository>();
+            services.AddScoped<IWeatherForecastRepository, WeatherForecastRepository>();
+            services.AddScoped<IGreekWeatherForecastRepository, GreekWeatherForecastRepository>();
+            services.AddScoped<INorseWeatherForecastRepository, NorseWeatherForecastRepository>();
+
+            services.AddScoped<IWeatherForecastRepositoryFacade, WeatherForecastRepositoryFacade>();
         }
 
     }

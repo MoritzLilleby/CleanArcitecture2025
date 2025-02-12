@@ -1,18 +1,13 @@
-﻿using Persistence.Behaviours;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Persistence.Behaviours.Greek;
 
 namespace Persistence.Creational
 {
-    internal class WeatherGodVisitorFactory : ICreateWeatherGodVisitor
+    internal class GreekWeatherGodVisitorFactory : ICreateWeatherGodVisitor
     {
         private static readonly IWeatherGodVisitor[] greekGods = { new Boreas(), new Eurus(), new Notus(), new Zephyrus(), new Zeus() };
         private static readonly Random random = new();
 
-        public IWeatherGodVisitor CreateWeatherGodVisitor()
+        public IWeatherGodVisitor CreateRandomWeatherGodVisitor()
         {
             var god = greekGods[random.Next(greekGods.Length)];
             return god;

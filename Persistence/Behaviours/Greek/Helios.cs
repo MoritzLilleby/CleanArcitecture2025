@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persistence.Behaviours
+namespace Persistence.Behaviours.Greek
 {
     internal class Helios : IWeatherGodVisitor
     {

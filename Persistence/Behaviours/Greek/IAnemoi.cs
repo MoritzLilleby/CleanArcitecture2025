@@ -1,6 +1,6 @@
 ﻿using Persistence.Entities;
 
-namespace Persistence.Behaviours
+namespace Persistence.Behaviours.Greek
 {
     internal interface IAnemoi
     {

@@ -1,4 +1,4 @@
-﻿using Persistence.Behaviours;
+﻿using Persistence.Behaviours.Greek;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace Persistence.Creational
 {
     internal interface ICreateWeatherGodVisitor
     {
-        public IWeatherGodVisitor CreateWeatherGodVisitor();
+        public IWeatherGodVisitor CreateRandomWeatherGodVisitor();
     }
 }
