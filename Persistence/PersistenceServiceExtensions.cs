@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Repositories;
+using Rabbit.Sender;
 
 namespace Persistence
 {
@@ -19,6 +20,10 @@ namespace Persistence
             services.AddScoped<INorseWeatherForecastRepository, NorseWeatherForecastRepository>();
 
             services.AddScoped<IWeatherForecastRepositoryFacade, WeatherForecastRepositoryFacade>();
+
+            services.AddRabbitSender();
+
+
         }
 
     }

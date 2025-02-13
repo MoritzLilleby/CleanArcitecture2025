@@ -1,11 +1,15 @@
+using CleanArcitecture2025.Server.BackgroundServices;
 using Infrastructure;
 using Persistence;
+using Rabbit.Receiver;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddInfrastructure(builder.Configuration);
+
+//builder.Services.AddHostedService<RabbitHostedService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -39,5 +43,6 @@ using (var scope = app.Services.CreateScope())
     Persistence.DbInitializer.CreateDbIfNotExists(services);
 }
 
+//await app.Services.GetRequiredService<RabbitProgram>().Receiver();
 
-app.Run();
+await app.RunAsync();

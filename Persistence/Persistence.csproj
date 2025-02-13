@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application.Contracts\Application.Contracts.csproj" />
+    <ProjectReference Include="..\Rabbit.Sender\Rabbit.Sender.csproj" />
   </ItemGroup>
 
   <ItemGroup>
