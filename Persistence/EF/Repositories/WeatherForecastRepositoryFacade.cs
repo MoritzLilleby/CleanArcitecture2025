@@ -1,12 +1,8 @@
 ﻿using Application.Contracts;
+using Persistence.EF.Repositories.interfaces;
 using Rabbit.Sender;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Persistence.Repositories
+namespace Persistence.EF.Repositories
 {
     public interface IWeatherForecastRepositoryFacade
     {
@@ -19,14 +15,14 @@ namespace Persistence.Repositories
     {
         private readonly IGreekWeatherForecastRepository _greekWeatherForecastRespositor;
         private readonly INorseWeatherForecastRepository _norseWeatherForecastRepository;
-        private readonly IWeatherForecastRepository weatherForecastRepository;
+        private readonly IEFWeatherforecastRepository weatherForecastRepository;
         private readonly IRabbitProgram rabbitProgram;
 
         public WeatherForecastRepositoryFacade
             (
                 IGreekWeatherForecastRepository greekWeatherForecastRespositor,
                 INorseWeatherForecastRepository norseWeatherForecastRepository,
-                IWeatherForecastRepository weatherForecastRepository,
+                IEFWeatherforecastRepository weatherForecastRepository,
                 IRabbitProgram rabbitProgram
             )
         {
@@ -51,7 +47,7 @@ namespace Persistence.Repositories
         {
             await Task.Delay(3000);
 
-            await this.rabbitProgram.Send("WeatherForecastRepositoryFacade.GetAll()");
+            await rabbitProgram.Send("WeatherForecastRepositoryFacade.GetAll()");
 
             return await weatherForecastRepository.GetAll();
 

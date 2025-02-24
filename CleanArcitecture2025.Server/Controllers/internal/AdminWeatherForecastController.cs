@@ -1,6 +1,6 @@
 ﻿using Application.Contracts;
 using Microsoft.AspNetCore.Mvc;
-using Persistence.Repositories;
+using Persistence.EF.Repositories;
 
 namespace CleanArcitecture2025.Server.Controllers.@internal
 {

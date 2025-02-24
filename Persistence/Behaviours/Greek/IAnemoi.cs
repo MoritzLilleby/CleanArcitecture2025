@@ -1,4 +1,4 @@
-﻿using Persistence.Entities;
+﻿using Persistence.EF.Entities;
 
 namespace Persistence.Behaviours.Greek
 {

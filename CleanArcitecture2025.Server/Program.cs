@@ -1,7 +1,6 @@
-using CleanArcitecture2025.Server.BackgroundServices;
+using Asp.Versioning;
 using Infrastructure;
-using Persistence;
-using Rabbit.Receiver;
+using Persistence.EF;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +13,13 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddApiVersioning(options =>
+{
+    options.ReportApiVersions = true;
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+});
 
 builder.Logging.AddConsole();
 
@@ -40,7 +46,7 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    Persistence.DbInitializer.CreateDbIfNotExists(services);
+    DbInitializer.CreateDbIfNotExists(services);
 }
 
 //await app.Services.GetRequiredService<RabbitProgram>().Receiver();

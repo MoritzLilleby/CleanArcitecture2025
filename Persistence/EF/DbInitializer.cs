@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Persistence.Entities;
+using Persistence.EF.Entities;
 
-namespace Persistence
+namespace Persistence.EF
 {
     public class DbInitializer
     {

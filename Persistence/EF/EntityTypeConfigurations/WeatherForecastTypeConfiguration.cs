@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Persistence.Entities;
+using Persistence.EF.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persistence.EntityTypeConfigurations
+namespace Persistence.EF.EntityTypeConfigurations
 {
     internal class WeatherForecastTypeConfiguration : IEntityTypeConfiguration<WeatherForecastEntity>
     {

@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Persistence.Entities;
-using Persistence.EntityTypeConfigurations;
+using Persistence.EF.Entities;
+using Persistence.EF.EntityTypeConfigurations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persistence
+namespace Persistence.EF
 {
     internal sealed class WeatherForecastContext : DbContext, IWeatherForecastContext
     {

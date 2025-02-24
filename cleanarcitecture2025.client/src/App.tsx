@@ -9,6 +9,9 @@ interface Forecast {
 }
 
 function App() {
+
+    const url = "/api/v2.0/weatherforecast";
+
     const [forecasts, setForecasts] = useState<Forecast[]>();
 
     useEffect(() => {
@@ -16,7 +19,7 @@ function App() {
     }, []);
 
     async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
+        const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
             setForecasts(data);
@@ -48,7 +51,7 @@ function App() {
 
 
     const handleClick = () => {
-        fetch('weatherforecast', {
+        fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

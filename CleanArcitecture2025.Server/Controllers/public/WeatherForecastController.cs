@@ -1,11 +1,13 @@
 using Application.Contracts;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using Persistence.Repositories;
+using Persistence.EF.Repositories;
 
 namespace CleanArcitecture2025.Server.Controllers.@public
 {
     [ApiController]
-    [Route("weatherforecast")]
+    [ApiVersion("1.0")]
+    [Route("api/v1.0/weatherforecast")]
     public class WeatherForecastController : ControllerBase
     {
 
@@ -22,7 +24,7 @@ namespace CleanArcitecture2025.Server.Controllers.@public
         }
 
         [HttpGet]
-        public async Task<List<WeatherForecast>> GetAll()
+        public async Task<ActionResult<List<WeatherForecast>>> GetAll()
         {
             return await _weatherForecastRepositoryFacade.GetAll();
         }

@@ -1,4 +1,4 @@
-﻿using Persistence.Entities;
+﻿using Persistence.EF.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

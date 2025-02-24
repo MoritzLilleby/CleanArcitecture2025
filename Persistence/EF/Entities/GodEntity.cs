@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persistence.Entities
+namespace Persistence.EF.Entities
 {
     internal class GodEntity
     {

@@ -2,21 +2,18 @@
 using Microsoft.EntityFrameworkCore;
 using Persistence.Behaviours.Norse;
 using Persistence.Creational;
-using Persistence.Entities;
+using Persistence.EF.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Persistence.Repositories
+namespace Persistence.EF.Repositories
 {
-    public interface IGreekWeatherForecastRepository
+    public interface INorseWeatherForecastRepository
     {
         Task Create();
     }
 
-    internal class GreekWeatherForecastRepository(IWeatherForecastContext context) : IGreekWeatherForecastRepository
+    internal class NorseWeatherForecastRepository(IWeatherForecastContext context) : INorseWeatherForecastRepository
     {
         private readonly DbSet<WeatherForecastEntity> _table = context.WeatherForcastEntities;
 
@@ -26,7 +23,13 @@ namespace Persistence.Repositories
 
             var factory = new GreekWeatherGodVisitorFactory();
 
-            forcast.Accept(factory.CreateRandomWeatherGodVisitor());
+            var norseGod = factory.CreateRandomWeatherGodVisitor();
+
+            forcast.Accept(norseGod);
+
+            var theAllFather = new Odin();
+            var ravens = theAllFather.CallRavens();
+            ravens.Observe(norseGod);
 
             await _table.AddAsync(forcast);
 

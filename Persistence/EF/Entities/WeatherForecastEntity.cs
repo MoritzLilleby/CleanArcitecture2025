@@ -1,6 +1,6 @@
 ﻿using Persistence.Behaviours.Greek;
 
-namespace Persistence.Entities
+namespace Persistence.EF.Entities
 {
     internal class WeatherForecastEntity
     {
