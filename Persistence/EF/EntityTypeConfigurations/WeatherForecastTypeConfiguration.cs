@@ -28,7 +28,7 @@ namespace Persistence.EF.EntityTypeConfigurations
                 .IsRequired(false)
                 .HasMaxLength(150);
 
-            builder.ToTable("WeatherForCast");
+            builder.ToTable("WeatherForecast");
         }
     }
 }
