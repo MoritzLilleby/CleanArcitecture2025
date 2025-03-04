@@ -6,7 +6,6 @@ using Persistence.Dapper;
 using Persistence.Dapper.Extensions;
 using Persistence.Dapper.Repositories.Interfaces;
 using Persistence.EF;
-using Persistence.EF.Repositories;
 using Persistence.EF.Repositories.interfaces;
 using Rabbit.Sender;
 
@@ -25,11 +24,8 @@ namespace Persistence
             });
 
             services.AddScoped<IEFWeatherforecastRepository, EF.Repositories.WeatherForecastRepository>();
-            services.AddScoped<IGreekWeatherForecastRepository, GreekWeatherForecastRepository>();
-            services.AddScoped<INorseWeatherForecastRepository, NorseWeatherForecastRepository>();
 
-            services.AddScoped<IWeatherForecastRepositoryFacade, WeatherForecastRepositoryFacade>();
-
+            
             // DAPPER CORE
             services.AddSingleton<IDapperContext, DapperContext>(provider =>
             {

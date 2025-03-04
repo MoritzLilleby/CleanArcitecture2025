@@ -9,7 +9,6 @@ namespace Persistence.Contracts
 {
     public interface IWeatherForecastRepository
     {
-        Task Create();
         Task<List<WeatherForecast>> GetAll();
     }
 }

@@ -1,7 +1,7 @@
 using Application.Contracts;
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using Persistence.EF.Repositories;
+using Persistence.EF.Repositories.interfaces;
 
 namespace CleanArcitecture2025.Server.Controllers.@public
 {
@@ -12,21 +12,21 @@ namespace CleanArcitecture2025.Server.Controllers.@public
     {
 
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly IWeatherForecastRepositoryFacade _weatherForecastRepositoryFacade;
+        private readonly IEFWeatherforecastRepository _eFWeatherforecastRepository;
 
         public WeatherForecastController(
             ILogger<WeatherForecastController> logger,
-            IWeatherForecastRepositoryFacade weatherForecastRepositoryFacade
+            IEFWeatherforecastRepository repository
             )
         {
             _logger = logger;
-            _weatherForecastRepositoryFacade=weatherForecastRepositoryFacade;
+            _eFWeatherforecastRepository=repository;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<WeatherForecast>>> GetAll()
         {
-            return await _weatherForecastRepositoryFacade.GetAll();
+            return await _eFWeatherforecastRepository.GetAll();
         }
 
     }

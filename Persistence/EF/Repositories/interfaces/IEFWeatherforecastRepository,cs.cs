@@ -9,5 +9,7 @@ namespace Persistence.EF.Repositories.interfaces
 {
     public interface IEFWeatherforecastRepository : IWeatherForecastRepository
     {
+        Task CreateGreekWeather();
+        Task CreateNorseWeather();
     }
 }

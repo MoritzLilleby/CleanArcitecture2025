@@ -9,5 +9,7 @@ namespace Persistence.Dapper.Repositories.Interfaces
 {
     public interface IDPWeatherForecastRepository : IWeatherForecastRepository
     {
+        Task CreateGreekWeather();
+        Task CreateNorseWeather();
     }
 }

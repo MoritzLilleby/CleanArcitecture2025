@@ -1,6 +1,6 @@
-﻿using Application.Contracts;
-using Microsoft.AspNetCore.Mvc;
-using Persistence.EF.Repositories;
+﻿using Microsoft.AspNetCore.Mvc;
+using Persistence.Dapper.Repositories.Interfaces;
+using Persistence.EF.Repositories.interfaces;
 
 namespace CleanArcitecture2025.Server.Controllers.@internal
 {
@@ -10,29 +10,48 @@ namespace CleanArcitecture2025.Server.Controllers.@internal
     {
 
         private readonly ILogger<AdminWeatherForecastController> _logger;
-        private readonly IWeatherForecastRepositoryFacade _weatherForecastRepositoryFacade;
+        private readonly IEFWeatherforecastRepository _eFWeatherforecastRepository;
+        private readonly IDPWeatherForecastRepository _dPWeatherForecastRepository;
 
         public AdminWeatherForecastController(
             ILogger<AdminWeatherForecastController> logger,
-            IWeatherForecastRepositoryFacade weatherForecastRepositoryFacade
+            IEFWeatherforecastRepository eFWeatherforecastRepository,
+            IDPWeatherForecastRepository dPWeatherForecastRepository
             )
         {
             _logger = logger;
-            _weatherForecastRepositoryFacade=weatherForecastRepositoryFacade;
+            _eFWeatherforecastRepository=eFWeatherforecastRepository;
+            _dPWeatherForecastRepository=dPWeatherForecastRepository;
+        }
+
+
+        [HttpPost]
+        [Route("ef/norse")]
+        public async Task CreateNorseWithEf()
+        {
+            await _eFWeatherforecastRepository.CreateNorseWeather();
         }
 
         [HttpPost]
-        [Route("norse")]
-        public async Task CreateNorse()
+        [Route("ef/greek")]
+        public async Task CreateGreekWithEf()
         {
-            await _weatherForecastRepositoryFacade.CreateNorseWeather();
+            await _eFWeatherforecastRepository.CreateGreekWeather();
+        }
+
+
+        [HttpPost]
+        [Route("dp/norse")]
+        public async Task CreateNorseWithDp()
+        {
+            await _dPWeatherForecastRepository.CreateNorseWeather();
         }
 
         [HttpPost]
-        [Route("greek")]
-        public async Task CreateGreek()
+        [Route("dp/greek")]
+        public async Task CreateGreekWithDp()
         {
-            await _weatherForecastRepositoryFacade.CreateGreekWeather();
+            await _dPWeatherForecastRepository.CreateGreekWeather();
         }
     }
 }

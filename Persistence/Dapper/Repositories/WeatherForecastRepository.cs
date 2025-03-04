@@ -1,27 +1,25 @@
-﻿using Application.Contracts;
-using Dapper;
+﻿using Dapper;
+using Application.Contracts;
 using Persistence.Dapper.Repositories.Interfaces;
 
 namespace Persistence.Dapper.Repositories
 {
-    public class WeatherForecastRepository : IDPWeatherForecastRepository
+    public class WeatherForecastRepository(IDapperContext context) : IDPWeatherForecastRepository
     {
-        private readonly IDapperContext _context;
-
-        public WeatherForecastRepository(IDapperContext context)
+        public Task CreateGreekWeather()
         {
-            _context = context;
+            throw new NotImplementedException();
         }
 
-        public Task Create()
+        public Task CreateNorseWeather()
         {
             throw new NotImplementedException();
         }
 
         public async Task<List<WeatherForecast>> GetAll()
         {
-            var query = "SELECT * FROM WeatherForCast";
-            using (var connection = _context.CreateConnection())
+            var query = "SELECT * FROM WeatherForeCast";
+            using (var connection = context.CreateConnection())
             {
                 var result = await connection.QueryAsync<WeatherForecast>(query);
                 return result.ToList();
