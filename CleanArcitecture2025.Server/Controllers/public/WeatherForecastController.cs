@@ -26,7 +26,16 @@ namespace CleanArcitecture2025.Server.Controllers.@public
         [HttpGet]
         public async Task<ActionResult<List<WeatherForecast>>> GetAll()
         {
-            return await _eFWeatherforecastRepository.GetAll();
+            var result = await _eFWeatherforecastRepository.GetAll();
+
+            var finalResult =  result.Select(x => new WeatherForecast
+            {
+                Date = x.Date,
+                TemperatureC = x.TemperatureC,
+                Summary = x.Summary,
+            }).ToList();
+
+            return finalResult;
         }
 
     }

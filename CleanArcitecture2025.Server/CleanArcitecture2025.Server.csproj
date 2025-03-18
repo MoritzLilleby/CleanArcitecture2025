@@ -1,24 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-	<IsPackable>ture</IsPackable>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <SpaRoot>..\cleanarcitecture2025.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:59808</SpaProxyServerUrl>
-    <PackageId>MlCorp123.Core</PackageId>
-    <Version>1.0.0.1</Version>
-    <Authors>Moritz Lilleby</Authors>
-    <Company>ML1337CORP</Company>
-    <Product>ML1337CORP.Core</Product>
-    <Description>Simple package</Description>
-    <Copyright>MIT</Copyright>
-    <PackageProjectUrl>https://github.com/MoritzLilleby/CleanArcitecture2025</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/MoritzLilleby/CleanArcitecture2025.git</RepositoryUrl>
-    <Title>Friendly title</Title>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

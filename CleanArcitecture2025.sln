@@ -9,8 +9,6 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "cleanarcitecture2025.client
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{F0BE8D65-9B33-4590-B918-82A6A9FDECCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{ADED1E8E-985C-4452-AFF2-5A7DCB991539}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Contracts", "Application.Contracts\Application.Contracts.csproj", "{3C1D31D8-6C99-4C0E-A0A5-2F78B61D8B89}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7B25D495-4FA4-46B8-BDC8-D1F65B9AF2DE}"
@@ -40,10 +38,6 @@ Global
 		{F0BE8D65-9B33-4590-B918-82A6A9FDECCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0BE8D65-9B33-4590-B918-82A6A9FDECCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0BE8D65-9B33-4590-B918-82A6A9FDECCF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADED1E8E-985C-4452-AFF2-5A7DCB991539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADED1E8E-985C-4452-AFF2-5A7DCB991539}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADED1E8E-985C-4452-AFF2-5A7DCB991539}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADED1E8E-985C-4452-AFF2-5A7DCB991539}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3C1D31D8-6C99-4C0E-A0A5-2F78B61D8B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3C1D31D8-6C99-4C0E-A0A5-2F78B61D8B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C1D31D8-6C99-4C0E-A0A5-2F78B61D8B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
