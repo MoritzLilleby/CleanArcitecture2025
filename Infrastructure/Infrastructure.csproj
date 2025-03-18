@@ -7,12 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <PackageReference Include="CleanArchitecture.Rabbit" Version="1.0.0.1" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
 	  <PackageReference Include="CleanArchitecture.Persistence" Version="1.0.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Rabbit.Receiver\Rabbit.Receiver.csproj" />
   </ItemGroup>
 
 </Project>

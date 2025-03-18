@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using CleanArchitecture.Rabbit;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence;
-using Rabbit.Receiver;
 
 namespace Infrastructure
 {
@@ -10,9 +10,9 @@ namespace Infrastructure
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddRabbitReceiver();
+            services.AddRabbitSender();
             
             services.AddPersistence(configuration);
-
 
         }
 
