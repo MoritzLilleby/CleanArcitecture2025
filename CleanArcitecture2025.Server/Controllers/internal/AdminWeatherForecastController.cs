@@ -5,7 +5,7 @@ using Persistence.EF.Repositories.interfaces;
 namespace CleanArcitecture2025.Server.Controllers.@internal
 {
     [ApiController]
-    [Route("adin/weatherforecast/")]
+    [Route("api/admin/v1.0/weatherforecast/")]
     public class AdminWeatherForecastController : ControllerBase
     {
 

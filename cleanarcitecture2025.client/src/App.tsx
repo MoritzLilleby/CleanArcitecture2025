@@ -51,7 +51,7 @@ function App() {
 
 
     const handleClick = () => {
-        fetch(url, {
+        fetch("/api/admin/v1.0/weatherforecast/ef/norse", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

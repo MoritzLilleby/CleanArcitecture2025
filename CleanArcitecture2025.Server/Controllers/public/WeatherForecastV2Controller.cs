@@ -14,11 +14,11 @@ namespace CleanArcitecture2025.Server.Controllers.@public
     {
 
         private readonly IWeatherForecastRepository _repository;
-        private readonly IRabbitSenderProgram rabbitSenderProgram;
+        private readonly Sender rabbitSenderProgram;
 
         public WeatherForecastV2Controller(
             IDPWeatherForecastRepository repository,
-            IRabbitSenderProgram rabbitSenderProgram
+            Sender rabbitSenderProgram
             )
         {
             _repository = repository;
@@ -28,7 +28,7 @@ namespace CleanArcitecture2025.Server.Controllers.@public
         [HttpGet]
         public async Task<ActionResult<List<WeatherForecast>>> GetAll()
         {
-            await this.rabbitSenderProgram.Send("WeatherForecastV2Controller.GetAll");
+            await this.rabbitSenderProgram.Send("WeatherForecastV2Controller.GetAll", "hello");
             var forecasts = await _repository.GetAll();
             return Ok(forecasts);
         }
