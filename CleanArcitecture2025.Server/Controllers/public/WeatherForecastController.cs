@@ -1,10 +1,13 @@
 using Application.Contracts;
 using Asp.Versioning;
+using CleanArchitecture.Rabbit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.EF.Repositories.interfaces;
 
 namespace CleanArcitecture2025.Server.Controllers.@public
 {
+    [Authorize]
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v1.0/weatherforecast")]
@@ -13,19 +16,24 @@ namespace CleanArcitecture2025.Server.Controllers.@public
 
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly IEFWeatherforecastRepository _eFWeatherforecastRepository;
+        private readonly Sender rabbitSenderProgram;
 
         public WeatherForecastController(
             ILogger<WeatherForecastController> logger,
-            IEFWeatherforecastRepository repository
+            IEFWeatherforecastRepository repository,
+            Sender rabbitSenderProgram
             )
         {
             _logger = logger;
             _eFWeatherforecastRepository=repository;
+            this.rabbitSenderProgram=rabbitSenderProgram;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<WeatherForecast>>> GetAll()
         {
+            await this.rabbitSenderProgram.Send("WeatherForecastController.GetAll", "hello");
+
             var result = await _eFWeatherforecastRepository.GetAll();
 
             var finalResult =  result.Select(x => new WeatherForecast

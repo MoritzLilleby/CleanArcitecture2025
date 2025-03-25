@@ -1,6 +1,9 @@
 using Asp.Versioning;
+using CleanArcitecture2025.Server;
 using Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 using Persistence.EF;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +13,17 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 //builder.Services.AddHostedService<RabbitHostedService>();
 
+builder.Services.AddAuthentications();
+
 builder.Services.AddControllers();
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(opt =>
+{
+    opt.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+});
+
+
 
 builder.Services.AddApiVersioning(options =>
 {
@@ -20,6 +31,7 @@ builder.Services.AddApiVersioning(options =>
     options.AssumeDefaultVersionWhenUnspecified = true;
     options.DefaultApiVersion = new ApiVersion(1, 0);
 });
+
 
 builder.Logging.AddConsole();
 
@@ -32,10 +44,25 @@ app.MapStaticAssets();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference(options =>
+    {
+        options.WithTitle("My API");
+        options.WithTheme(ScalarTheme.Moon);
+        options.WithSidebar(false);
+
+        options
+        .WithPreferredScheme("Bearer") // Security scheme name from the OpenAPI document
+        .WithHttpBearerAuthentication(bearer =>
+        {
+            bearer.Token = "your-bearer-token";
+        });
+
+    });
 }
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

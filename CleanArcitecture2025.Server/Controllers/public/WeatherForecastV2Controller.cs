@@ -1,12 +1,14 @@
 ﻿using Application.Contracts;
 using Asp.Versioning;
 using CleanArchitecture.Rabbit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Contracts;
 using Persistence.Dapper.Repositories.Interfaces;
 
 namespace CleanArcitecture2025.Server.Controllers.@public
 {
+    [Authorize]
     [ApiController]
     [ApiVersion("2.0")]
     [Route("api/v2.0/weatherforecast")]
