@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 namespace CleanArcitecture2025.Server.Controllers.@public
@@ -26,9 +27,18 @@ namespace CleanArcitecture2025.Server.Controllers.@public
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("yourLongSecretKey123yourLongSecretKey123yourLongSecretKey123yourLongSecretKey123"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+            // Define your claims
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Name, "yourUserId"),
+                new Claim(JwtRegisteredClaimNames.Email, "user@example.com"),
+                new Claim("customClaimType", "customClaimValue")
+            };
+
             var token = new JwtSecurityToken(
                 issuer: "https://localhost:7147", // Optional for POC
                 audience: "yourAudience", // Optional for POC
+                claims: claims,
                 expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: credentials);
 

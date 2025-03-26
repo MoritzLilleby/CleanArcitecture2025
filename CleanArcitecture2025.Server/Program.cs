@@ -11,7 +11,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddInfrastructure(builder.Configuration);
 
-//builder.Services.AddHostedService<RabbitHostedService>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+    builder => builder
+     .AllowAnyMethod()
+     .AllowAnyHeader()
+     .AllowCredentials()
+     .SetIsOriginAllowed((host) => true));
+});
 
 builder.Services.AddAuthentications();
 
@@ -22,7 +30,6 @@ builder.Services.AddOpenApi(opt =>
 {
     opt.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
 });
-
 
 
 builder.Services.AddApiVersioning(options =>
@@ -57,13 +64,15 @@ if (app.Environment.IsDevelopment())
             bearer.Token = "your-bearer-token";
         });
 
-    });
+    }).AllowAnonymous();
 }
 
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseCors("CorsPolicy");
 
 app.MapControllers();
 
@@ -75,7 +84,5 @@ using (var scope = app.Services.CreateScope())
 
     DbInitializer.CreateDbIfNotExists(services);
 }
-
-//await app.Services.GetRequiredService<RabbitProgram>().Receiver();
 
 await app.RunAsync();
