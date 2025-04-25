@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Persistence.Dapper.Repositories.Interfaces;
 using Persistence.EF.Repositories.interfaces;
 
-namespace CleanArcitecture2025.Server.Controllers.@internal
+namespace CleanArchitecture2025.Server.Controllers.@internal
 {
     [Authorize]
     [ApiController]

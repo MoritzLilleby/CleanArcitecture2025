@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.EF.Repositories.interfaces;
 
-namespace CleanArcitecture2025.Server.Controllers.@public
+namespace CleanArchitecture2025.Server.Controllers.@public
 {
     [Authorize]
     [ApiController]

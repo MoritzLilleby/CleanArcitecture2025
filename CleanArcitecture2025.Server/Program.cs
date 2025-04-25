@@ -1,5 +1,5 @@
 using Asp.Versioning;
-using CleanArcitecture2025.Server;
+using CleanArchitecture2025.Server;
 using Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.EF;

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArcitecture2025.Server", "CleanArcitecture2025.Server\CleanArcitecture2025.Server.csproj", "{AF106DDC-B507-4F1B-B28F-EAE10773FD94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture2025.Server", "CleanArcitecture2025.Server\CleanArchitecture2025.Server.csproj", "{AF106DDC-B507-4F1B-B28F-EAE10773FD94}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "cleanarcitecture2025.client", "cleanarcitecture2025.client\cleanarcitecture2025.client.esproj", "{B12817A4-687E-426F-BA4A-10DB7C1C7097}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "CleanArcitecture2025.client", "cleanarcitecture2025.client\CleanArcitecture2025.client.esproj", "{B12817A4-687E-426F-BA4A-10DB7C1C7097}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{F0BE8D65-9B33-4590-B918-82A6A9FDECCF}"
 EndProject

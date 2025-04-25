@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace CleanArcitecture2025.Server.Controllers.@public
+namespace CleanArchitecture2025.Server.Controllers.@public
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi.Models;
 
-namespace CleanArcitecture2025.Server
+namespace CleanArchitecture2025.Server
 {
     internal sealed class BearerSecuritySchemeTransformer(
      IAuthenticationSchemeProvider authenticationSchemeProvider

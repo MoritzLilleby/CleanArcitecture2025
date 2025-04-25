@@ -30,7 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application.Contracts\Application.Contracts.csproj" />
-    <ProjectReference Include="..\cleanarcitecture2025.client\cleanarcitecture2025.client.esproj">
+    <ProjectReference Include="..\cleanarcitecture2025.client\CleanArcitecture2025.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />

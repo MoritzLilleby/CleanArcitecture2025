@@ -2,7 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace CleanArcitecture2025.Server
+namespace CleanArchitecture2025.Server
 {
     public static class ServiceExtension
     {
