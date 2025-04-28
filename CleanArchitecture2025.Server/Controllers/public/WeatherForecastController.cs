@@ -24,7 +24,7 @@ namespace CleanArchitecture2025.Server.Controllers.@public
             Sender rabbitSenderProgram
             )
         {
-            _logger = logger;
+            _logger = logger; 
             _eFWeatherforecastRepository=repository;
             this.rabbitSenderProgram=rabbitSenderProgram;
         }

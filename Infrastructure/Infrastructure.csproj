@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <PackageReference Include="CleanArchitecture.Persistence" Version="1.0.0.8" />
 	  <PackageReference Include="CleanArchitecture.Rabbit" Version="1.0.0.4" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
-	  <PackageReference Include="CleanArchitecture.Persistence" Version="1.0.0.2" />
   </ItemGroup>
 
 </Project>

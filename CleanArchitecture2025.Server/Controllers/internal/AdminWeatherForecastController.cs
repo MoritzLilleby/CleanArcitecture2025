@@ -6,7 +6,7 @@ using Persistence.EF.Repositories.interfaces;
 
 namespace CleanArchitecture2025.Server.Controllers.@internal
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("api/admin/v1.0/weatherforecast/")]
     public class AdminWeatherForecastController : ControllerBase
