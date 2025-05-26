@@ -6,8 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
-	  <PackageReference Include="CleanArchitecture.Persistence" Version="1.0.0.8" />
+	  <PackageReference Include="CleanArchitecture.Persistence" Version="1.0.0.11" />
 	  <PackageReference Include="CleanArchitecture.Rabbit" Version="1.0.0.4" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
   </ItemGroup>
