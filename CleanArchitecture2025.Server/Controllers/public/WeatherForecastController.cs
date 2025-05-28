@@ -1,9 +1,9 @@
 using Application.Contracts;
 using Asp.Versioning;
+using CleanArchitecture.Persistence.EF.Repositories.interfaces;
 using CleanArchitecture.Rabbit;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Persistence.EF.Repositories.interfaces;
 
 namespace CleanArchitecture2025.Server.Controllers.@public
 {

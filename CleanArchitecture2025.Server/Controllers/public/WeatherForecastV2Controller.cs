@@ -1,10 +1,10 @@
 ﻿using Application.Contracts;
 using Asp.Versioning;
+using CleanArchitecture.Persistence.Contracts;
+using CleanArchitecture.Persistence.Dapper.Repositories.Interfaces;
 using CleanArchitecture.Rabbit;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Persistence.Contracts;
-using Persistence.Dapper.Repositories.Interfaces;
 
 namespace CleanArchitecture2025.Server.Controllers.@public
 {
@@ -14,8 +14,8 @@ namespace CleanArchitecture2025.Server.Controllers.@public
     [Route("api/v2.0/weatherforecast")]
     public class WeatherForecastV2Controller : ControllerBase
     {
+        private readonly IDPWeatherForecastRepository _repository;
 
-        private readonly IWeatherForecastRepository _repository;
         private readonly Sender rabbitSenderProgram;
 
         public WeatherForecastV2Controller(

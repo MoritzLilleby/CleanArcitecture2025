@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Rabbit;
+﻿using CleanArchitecture.Persistence;
+using CleanArchitecture.Rabbit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence;

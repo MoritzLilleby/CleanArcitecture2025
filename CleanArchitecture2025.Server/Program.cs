@@ -1,8 +1,7 @@
 using Asp.Versioning;
+using CleanArchitecture.Persistence.EF;
 using CleanArchitecture2025.Server;
 using Infrastructure;
-using Microsoft.Extensions.DependencyInjection;
-using Persistence.EF;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
